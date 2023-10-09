@@ -18,7 +18,7 @@ class MyDatePickerButton extends StatelessWidget {
         // ignore: avoid_print
         print(selectedDate.day + selectedDate.month + selectedDate.year)
       },
-      child: const Text('Pilih Tanggal'),
+      child: const Text('PILIH TANGGAL'),
     );
   }
 }

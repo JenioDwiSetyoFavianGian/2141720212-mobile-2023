@@ -9,7 +9,7 @@ class BottomAppBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomAppBar(
       shape: const CircularNotchedRectangle(),
-      color: Colors.red,
+      color: Colors.blue,
       child: Container(
         height: 50.0,
       ),

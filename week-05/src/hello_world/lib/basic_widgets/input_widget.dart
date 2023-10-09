@@ -11,7 +11,7 @@ class InputWidget extends StatelessWidget {
       obscureText: false,
       decoration: InputDecoration(
         border: OutlineInputBorder(),
-        labelText: 'Nama',
+        labelText: 'NAMA',
       ),
     );
   }

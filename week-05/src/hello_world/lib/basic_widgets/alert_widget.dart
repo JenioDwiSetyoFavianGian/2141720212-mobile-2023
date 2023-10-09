@@ -9,7 +9,7 @@ class MyLayout extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ElevatedButton(
-          child: const Text('Show alert'),
+          child: const Text('SHOW ALERT'),
           onPressed: () {
             showAlertDialog(context);
           },
@@ -34,8 +34,8 @@ class MyAlertDialog extends StatelessWidget {
 
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
-      title: const Text("My title"),
-      content: const Text("This is my message."),
+      title: const Text("My TITTLE"),
+      content: const Text("THIS IS MY MASSAGE."),
       actions: [
         okButton,
       ],

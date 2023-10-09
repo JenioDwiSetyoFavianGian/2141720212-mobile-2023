@@ -9,7 +9,7 @@ class MyCupertinoButton extends StatelessWidget {
       child: Column(
         children: <Widget>[
           CupertinoButton.filled(
-            child: const Text("Contoh button"),
+            child: const Text("CONTOH BUTTON"),
             onPressed: () {},
           ),
           const SizedBox(

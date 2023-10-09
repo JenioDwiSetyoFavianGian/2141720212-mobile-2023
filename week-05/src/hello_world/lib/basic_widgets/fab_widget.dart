@@ -28,7 +28,7 @@ class IncrementFABWidget extends StatelessWidget {
     return FloatingActionButton(
       onPressed: onPressed,
       backgroundColor: Colors.red,
-      tooltip: 'Increment Counter',
+      tooltip: 'INCREMENT COUNTER',
       child: const Icon(Icons.add),
     );
   }
