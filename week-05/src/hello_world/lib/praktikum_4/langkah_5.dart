@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text("Contoh TextField")),
+        appBar: AppBar(title: const Text("CONTOH TEXTFIELD")),
         body: Container(
           margin: const EdgeInsetsDirectional.only(
             top: 30,

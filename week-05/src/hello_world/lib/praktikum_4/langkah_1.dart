@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return const CupertinoApp(
       title: 'Jenio Dwi Setyo Favian Gian',
       home: MyHomePage(
-        title: 'Jenio Dwi Setyo Favian Gian Home Page',
+        title: 'Home Page Jenio Dwi Setyo Favian Gian ',
       ),
     );
   }

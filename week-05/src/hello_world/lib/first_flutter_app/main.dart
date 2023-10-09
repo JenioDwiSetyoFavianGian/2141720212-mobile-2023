@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => MyAppState(),
       child: MaterialApp(
-        title: 'First Flutter App | Jenio Dwi Setyo Favian Gian',
+        title: 'FIRST FLUTTER APP | Jenio Dwi Setyo Favian Gian',
         theme: ThemeData(
           useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),

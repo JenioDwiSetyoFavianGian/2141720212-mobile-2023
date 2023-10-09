@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const MyHomePage(
-        title: 'Jenio Dwi Setyo Favian Gian Home Page',
+        title: 'Home Page Jenio Dwi Setyo Favian Gian',
       ),
     );
   }
