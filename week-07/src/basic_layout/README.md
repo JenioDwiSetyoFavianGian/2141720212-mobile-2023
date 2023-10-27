@@ -1,6 +1,6 @@
 # basic_layout
 
-Belajar dasar-dasar layout.
+A new Flutter project.
 
 ## Getting Started
 

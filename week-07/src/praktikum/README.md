@@ -1,6 +1,6 @@
 # praktikum
 
-Praktikum 7 belajar layouting membuat card sederhana.
+A new Flutter project.
 
 ## Getting Started
 
