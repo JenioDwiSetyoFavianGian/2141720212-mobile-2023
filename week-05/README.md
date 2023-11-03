@@ -4,10 +4,6 @@
 
 # Praktikum 3: Menerapkan Widget Dasar
 
-## Hasil di Emulator
-
-![Screenshot hasil_praktikum_3](docs/praktikum3/result1.png)
-
 ## Hasil di HP (SAMSUNG)
 
 ![Screenshot hasil_praktikum_3](docs/praktikum3/result-on-hp.jpg)
@@ -20,7 +16,7 @@
 
 ## Hasil di Emulator
 
-![Screenshot langkah_1](docs/praktikum4/langkah1.png)
+![Screenshot langkah_1](docs/praktikum4/langkah01.png)
 
 ## Hasil di HP (SAMSUNG)
 
@@ -30,7 +26,7 @@
 
 ## Hasil di Emulator
 
-![Screenshot langkah_2](docs/praktikum4/langkah2.png)
+![Screenshot langkah_2](docs/praktikum4/langkah02.png)
 
 ## Hasil di HP (SAMSUNG)
 
@@ -40,7 +36,7 @@
 
 ## Hasil di Emulator
 
-![Screenshot langkah_3](docs/praktikum4/langkah3.png)
+![Screenshot langkah_3](docs/praktikum4/langkah03.png)
 
 ## Hasil di HP (SAMSUNG)
 
@@ -50,7 +46,7 @@
 
 ## Hasil di Emulator
 
-![Screenshot langkah_4](docs/praktikum4/langkah4.png)
+![Screenshot langkah_4](docs/praktikum4/langkah04.png)
 
 ## Hasil di HP (SAMSUNG)
 
@@ -60,7 +56,7 @@
 
 ## Hasil di Emulator
 
-![Screenshot langkah_5](docs/praktikum4/langkah5.png)
+![Screenshot langkah_5](docs/praktikum4/langkah05.png)
 
 ## Hasil di HP (SAMSUNG)
 
@@ -70,7 +66,7 @@
 
 ## Hasil di Emulator
 
-![Screenshot langkah_6](docs/praktikum4/langkah6.png)
+![Screenshot langkah_6](docs/praktikum4/langkah06.png)
 
 ## Hasil di HP (SAMSUNG)
 
@@ -82,7 +78,7 @@
 
 ## Hasil di Emulator
 
-![Screenshot hasil_first_flutter_app](docs/first-flutter-app/result.png)
+![Screenshot hasil_first_flutter_app](docs/first-flutter-app/result01.png)
 
 ## Hasil di HP (SAMSUNG)
 
