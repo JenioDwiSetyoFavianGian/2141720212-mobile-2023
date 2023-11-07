@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'pages/home_page.dart';
-// import 'pages/item_page.dart';
+import 'pages/item_page.dart';
 
 void main() {
   runApp(
@@ -13,7 +13,7 @@ void main() {
       initialRoute: '/',
       routes: {
         '/': (context) => const HomePage(),
-        '/item': (context) => const HomePage(),
+        '/item': (context) => const ItemPage(),
       },
     ),
   );
