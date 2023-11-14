@@ -42,3 +42,37 @@ Langkah 13 - dispose(): Metode dispose() dipanggil ketika widget ini dihapus dar
 ## Hasil Praktikum_2
 
 ![Screenshot](docs/praktikum_2.gif)
+
+---
+
+## Penjelasan Langkah 1
+
+InheritedWidget adalah sebuah widget khusus di Flutter yang dapat meneruskan data ke widget turunannya. Atau arti lain, InheritedWidget dapat menyimpan data di satu tempat dan kemudian mengaksesnya dari banyak widget lain tanpa harus melewati banyak parameter.
+
+Dalam kode tersebut, PlanProvider adalah sebuah InheritedWidget. Ini berarti bahwa PlanProvider dapat meneruskan ValueNotifier<Plan> ke widget turunannya.
+
+InheritedNotifier adalah sebuah InheritedWidget khusus yang dirancang untuk bekerja dengan objek yang mengimplementasikan Listenable, seperti ValueNotifier. InheritedNotifier secara otomatis akan memanggil updateShouldNotify setiap kali notifier berubah, dan akan memicu pembangunan ulang widget yang tergantung pada InheritedNotifier.
+
+---
+
+## Penjelasan Langkah 3
+
+Metode pada langkah 3 tersebut digunakan untuk menghitung jumlah tugas yang telah selesai dan membuat pesan tentang tingkat kelengkapan tugas.
+
+int get completedCount => tasks.where((task) => task.complete).length; adalah getter yang menghitung berapa banyak tugas dalam daftar tasks yang telah selesai. Ini dilakukan dengan memfilter tasks untuk hanya mencakup tugas yang complete (selesai), dan kemudian mengambil jumlahnya dengan length.
+
+String get completenessMessage => '$completedCount out of ${tasks.length} tasks'; adalah getter yang membuat pesan string yang menunjukkan berapa banyak tugas yang telah selesai dari total tugas. Ini menggunakan completedCount yang telah dihitung sebelumnya dan jumlah total tugas (tasks.length).
+
+Mengapa dilakukan demikian? Kode ini membantu dalam memberikan umpan balik visual kepada pengguna tentang progres mereka dalam menyelesaikan tugas. Dengan mengetahui berapa banyak tugas yang telah mereka selesaikan, pengguna dapat melacak kemajuan mereka dan merasa lebih termotivasi untuk menyelesaikan tugas yang tersisa.
+
+---
+
+## Hasil Praktikum_1
+
+![Screenshot](docs/praktikum_3.gif)
+
+--
+
+## Penjelasan Praktikum 3
+
+Diagram tersebut menunjukkan bahwa aplikasi tersebut memiliki dua fitur utama, yaitu membuat rencana perjalanan baru dan membuat detail pekerjaan pada rencana perjalanan yang sudah ada. Di halaman pertama, yaitu halaman PlanCreatorScreen, pengguna dapat memasukkan nama rencana perjalanan. Setelah itu, pengguna dapat mengklik rencana perjalanan tersebut untuk berpindah ke halaman PlanScreen. Pada halaman PlanScreen, pengguna dapat memasukkan detail pekerjaan, seperti todolist. Setelah pengguna memasukkan semua detail pekerjaan, data rencana perjalanan akan disimpan ke dalam komponen PlanProvider.
