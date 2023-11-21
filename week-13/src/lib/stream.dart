@@ -8,4 +8,12 @@ class ColorStream {
     Colors.lightBlue,
     Colors.teal
   ];
+  Stream<Color> getColors() async* {
+    yield* Stream.periodic( //digunakan dalam konteks generator
+      const Duration(seconds: 1), (int t) {
+        int index = t % colors.length;
+        return colors[index];
+      }
+    );
+  }
 }
