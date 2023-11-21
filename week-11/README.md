@@ -67,7 +67,7 @@ Mengapa dilakukan demikian? Kode ini membantu dalam memberikan umpan balik visua
 
 ---
 
-## Hasil Praktikum_1
+## Hasil Praktikum_3
 
 ![Screenshot](docs/praktikum_3.gif)
 
