@@ -5,7 +5,7 @@ class ColorStream {
   final List<Color> colors = [
     Colors.blueGrey,
     Colors.lightGreen,
-    Colors.deepOrange,
+    const Color.fromRGBO(255, 87, 34, 1),
     Colors.lightBlue,
     Colors.teal
   ];
