@@ -75,3 +75,16 @@ Langkah 8 : addRandomNumber() digunakan untuk menambahkan nomor acak ke dalam st
 Soal 10 : StateError (Bad state: Stream has already been listened to.) karena mencoba untuk mendengarkan (listen) stream yang sama lebih dari sekali secara bersamaan. stream seharusnya unik, jadi ketika dijalankan bersamaan akan terjadi konflik.
 
 Soal 11 : karena menggunakan Stream stream = numberStreamController.stream.asBroadcastStream(); sehingga dapat didengarkan oleh beberapa subscriptions secara bersamaan, berbeda dengan stream biasa yang hanya dapat didengarkan sekali. dan setiap subscritions akan menerima data yang sama pada waktu yang bersamaan.
+
+---
+
+## Hasil Praktikum_6
+
+![Screenshot](docs/praktikum6.gif)
+
+---
+
+## Penjelasan Soal 12 Langkah 3 dan 7
+Langkah 3 : kode tersebut mendefinisikan class (NumberStream()) yang memiliki metode (getNumbers()) untuk mengembalikan stream berisi angka acak dengan periode waktu selama 1 detik.
+
+Langkah 7 : kode tersebut digunakan untuk membuat tampilan UI untuk menampilkan nilai dari stream secara real-time. Dengan menggunakan (StreamBuilder), antarmuka akan diperbarui secara otomatis setiap kali ada perubahan stream, baik itu perubahan value atau ketika terdapat error. Terdapat kondisi ketika terjadi error maka akan menampilkan pesan 'Error!', ketika tidak terjadi error dan mendapatkan data dari stream maka akan menampilkan angka acak dengan gaya fontSize diatur sebesar 96, namun apabila tidak ada data yang diterima maka akan menampilkan widget kosong.
