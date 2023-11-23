@@ -38,81 +38,8 @@ class _StreamHomePageState extends State<StreamHomePage> {
   late NumberStream numberStream;
   late StreamTransformer transformer;
   late StreamSubscription subscription;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text('Stream Vian'),
-        ),
-        body: SizedBox(
-          width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(lastNumber.toString()),
-              ElevatedButton(
-                  onPressed: () => addRandomNumber(),
-                  child: const Text('New Random Number')),
-              ElevatedButton(
-                  onPressed: () => stopStream(),
-                  child: const Text('Stop Subscription'))
-            ],
-          ),
-        ));
-  }
-
-  @override
-  void initState() {
-    numberStream = NumberStream();
-    numberStreamController = numberStream.controller;
-    Stream stream = numberStreamController.stream;
-    subscription = stream.listen((event) {
-      setState(() {
-        lastNumber = event;
-      });
-    });
-    // stream.listen((event) {
-    //   setState(() {
-    //     lastNumber = event;
-    //   });
-    // }).onError((error) {
-    //   setState(() {
-    //     lastNumber = -1;
-    //   });
-    // });
-    //     transformer = StreamTransformer<int, int>.fromHandlers(
-    //     handleData: (value, sink) {
-    //       sink.add(value * 10);
-    //     },
-    //     handleError: (error, trace, sink) {
-    //       sink.add(-1);
-    //     },
-    //     handleDone: (sink) => sink.close());
-
-    // stream.transform(transformer).listen((event) {
-    //   setState(() {
-    //     lastNumber = event;
-    //   });
-    // }).onError((error) {
-    //   setState(() {
-    //     lastNumber = -1;
-    //   });
-    // });
-    super.initState();
-    subscription.onError((error) {
-      setState(() {
-        lastNumber = -1;
-      });
-    });
-    subscription.onDone(() {
-      print('onDone was called');
-    });
-    void stopStream() {
-      numberStreamController.close();
-    }
-  }
+  late StreamSubscription subscription2;
+  String values = '';
 
   void changeColor() async {
     // await for (var eventColor in colorStream.getColors()) {
@@ -121,11 +48,105 @@ class _StreamHomePageState extends State<StreamHomePage> {
     //   });
     // }
 
-    colorStream.getColors().listen((event) {
+    colorStream.getColors().listen((eventColor) {
       setState(() {
-        bgColor = event;
+        bgColor = eventColor;
       });
     });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Stream Vian'),
+      ),
+      // body: Container(
+      //   decoration: BoxDecoration(color: bgColor),
+      // ),
+      body: SizedBox(
+        width: double.infinity,
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              // Text(lastNumber.toString()),
+              Text(values),
+              ElevatedButton(
+                  onPressed: () => addRandomNumber(),
+                  child: Text('New Random Number')),
+              ElevatedButton(
+                  onPressed: () => stopStream(),
+                  child: const Text('Stop Subscription'))
+            ]),
+      ),
+    );
+  }
+
+  @override
+  void initState() {
+    numberStream = NumberStream();
+    numberStreamController = numberStream.controller;
+    // Stream stream = numberStreamController.stream;
+    Stream stream = numberStreamController.stream.asBroadcastStream();
+    subscription = stream.listen((event) {
+      setState(() {
+        // lastNumber = event;
+        values += '$event - ';
+      });
+    });
+
+    subscription2 = stream.listen((event) {
+      setState(() {
+        values += '$event - ';
+      });
+    });
+
+    subscription.onError((error) {
+      setState(() {
+        lastNumber = -1;
+      });
+    });
+
+    subscription.onDone(() {
+      print('onDone was called');
+    });
+
+    super.initState();
+    // colorStream = ColorStream();
+    // changeColor();
+  }
+  // stream.listen((event) {
+  //   setState(() {
+  //     lastNumber = event;
+  //   });
+  // }).onError((error) {
+  //   setState(() {
+  //     lastNumber = -1;
+  //   });
+  // });
+
+  // stream.transform(transformer).listen((event) {
+  //   setState(() {
+  //     lastNumber = event;
+  //   });
+  // }).onError((error) {
+  //   setState(() {
+  //     lastNumber = -1;
+  //   });
+  // });
+
+  // transformer = StreamTransformer<int, int>.fromHandlers(
+  //     handleData: (value, sink) {
+  //       sink.add(value * 10);
+  //     },
+  //     handleError: (error, trace, sink) {
+  //       sink.add(-1);
+  //     },
+  //     handleDone: (sink) => sink.close());
+
+  void stopStream() {
+    numberStreamController.close();
   }
 
   void addRandomNumber() {
@@ -141,13 +162,11 @@ class _StreamHomePageState extends State<StreamHomePage> {
     }
     // numberStream.addError();
   }
-    void stopStream() {
-    numberStreamController.close();
-  }
+
   @override
   void dispose() {
     numberStreamController.close();
-    super.dispose();
     subscription.cancel();
+    super.dispose();
   }
 }
