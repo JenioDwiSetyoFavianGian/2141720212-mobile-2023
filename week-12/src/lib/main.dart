@@ -34,6 +34,18 @@ class FuturePage extends StatefulWidget {
 }
 
 class _FuturePageState extends State<FuturePage> {
+  late Completer completer;
+  Future getNumber() {
+    completer = Completer<int>();
+    calculate();
+    return completer.future;
+  }
+
+  Future calculate() async {
+    await Future.delayed(const Duration(seconds: 5));
+    completer.complete(42);
+  }
+
   String result = '';
   @override
   Widget build(BuildContext context) {
@@ -49,6 +61,11 @@ class _FuturePageState extends State<FuturePage> {
               // child: const Text('GO!'),
               onPressed: () {
                 count();
+                getNumber().then((value) {
+                  setState(() {
+                    result = value.toString();
+                  });
+                });
                 setState(() {});
                 getData().then((value) {
                   result = value.body.toString().substring(0, 450);
@@ -89,6 +106,7 @@ class _FuturePageState extends State<FuturePage> {
     await Future.delayed(const Duration(seconds: 3));
     return 3;
   }
+
   Future count() async {
     int total = 0;
     total = await returnOneAsync();
