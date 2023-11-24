@@ -6,8 +6,6 @@
 
 ![Screenshot](docs/praktikum_1.gif)
 
----
-
 ## Penjelasan Langkah 4: Buat file data_layer.dart
 
 Kode export 'plan.dart'; dan export 'task.dart'; dalam kode tersebut digunakan untuk membuat library. Dengan kata lain, kode tersebut memungkinkan untuk mengorganisir kode menjadi berbagai file dan kemudian menggabungkannya kembali. Dengan cara ini, semua kelas, fungsi, dan variabel dari plan.dart dan task.dart akan tersedia di dalam kelas yang memanggil 'data_layer.dart'. Ini membuat kode lebih rapi dan mudah dikelola.
