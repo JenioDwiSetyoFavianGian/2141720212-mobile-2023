@@ -1,5 +1,6 @@
 import 'dart:async';
-import 'dart:html';
+
+import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
@@ -43,7 +44,17 @@ class _FuturePageState extends State<FuturePage> {
           const Spacer(),
           ElevatedButton(
             child: const Text('GO!'),
-            onPressed: () {},
+            onPressed: () {
+              setState(() {});
+              getData()
+              .then((value) {
+                result = value.body.toString().substring(0, 450);
+                setState(() {});
+              }).catchError((_){
+                result = 'An error occurred';
+                setState(() {});
+              });
+              }
           ),
           const Spacer(),
           Text(result),
@@ -53,9 +64,9 @@ class _FuturePageState extends State<FuturePage> {
         ]),
       ),
     );
-  }www.googleapis.com
+  }
   Future<Response> getData() async {
-    const authority = '';
+    const authority = 'www.googleapis.com';
     const path = '/books/v1/volumes/ywgMWGkWk5kC';
     Uri url = Uri.https(authority, path);
     return http.get(url);
