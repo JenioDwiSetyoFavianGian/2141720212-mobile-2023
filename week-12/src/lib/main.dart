@@ -41,6 +41,24 @@ class _FuturePageState extends State<FuturePage> {
     return completer.future;
   }
 
+  void returnFutureGroup() {
+    FutureGroup<int> futureGroup = FutureGroup<int>();
+    futureGroup.add(returnOneAsync());
+    futureGroup.add(returnTwoAsync());
+    futureGroup.add(returnThreeAsync());
+    futureGroup.close();
+    futureGroup.future.then((List<int> value) {
+      int total = 0;
+
+      for (var element in value) {
+        total += element;
+      }
+      setState(() {
+        result = total.toString();
+      });
+    });
+  }
+
   Future calculate() async {
     try {
       await Future.delayed(const Duration(seconds: 5));
@@ -64,7 +82,8 @@ class _FuturePageState extends State<FuturePage> {
               child: Text('GO!'),
               // child: const Text('GO!'),
               onPressed: () {
-                count();
+                // count();
+                returnFutureGroup();
                 getNumber().then((value) {
                   setState(() {
                     result = value.toString();
