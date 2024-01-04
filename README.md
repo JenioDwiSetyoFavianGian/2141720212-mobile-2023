@@ -13,3 +13,6 @@ Berisi Project-project untuk praktikum mata kuliah MOBILE Ganjil 23/24 JTI Polin
 |    / 10 / 2023 | WEEK -7 | https://github.com/JenioDwiSetyoFavianGian/2141720212-mobile-2023/tree/main/week-07 |
 |    / 10 / 2023 | WEEK -8 | https://github.com/JenioDwiSetyoFavianGian/2141720212-mobile-2023/tree/main/week-08 |
 |    / 10 / 2023 | WEEK -10 | https://github.com/JenioDwiSetyoFavianGian/2141720212-mobile-2023/tree/main/week-10 |
+|    / 10 / 2023 | WEEK -11 | https://github.com/JenioDwiSetyoFavianGian/2141720212-mobile-2023/tree/main/week-11 |
+|    / 10 / 2023 | WEEK -12 | https://github.com/JenioDwiSetyoFavianGian/2141720212-mobile-2023/tree/main/week-12 |
+| 24 / 11 / 2023 | WEEK -13 | https://github.com/JenioDwiSetyoFavianGian/2141720212-mobile-2023/tree/main/week-13 |
