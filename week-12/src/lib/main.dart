@@ -40,14 +40,18 @@ class _FuturePageState extends State<FuturePage> {
     calculate();
     return completer.future;
   }
-
-  void returnFutureGroup() {
-    FutureGroup<int> futureGroup = FutureGroup<int>();
-    futureGroup.add(returnOneAsync());
-    futureGroup.add(returnTwoAsync());
-    futureGroup.add(returnThreeAsync());
-    futureGroup.close();
-    futureGroup.future.then((List<int> value) {
+  Future returnError() async {
+    await Future.delayed(const Duration(seconds: 2));
+    throw Exception('Something terrible happened');
+  }
+  
+  void returnFutureWait() {
+    final futures = Future.wait<int>([
+      returnOneAsync(),
+      returnTwoAsync(),
+      returnThreeAsync(),
+    ]);
+    futures.then((List<int> value) {
       int total = 0;
 
       for (var element in value) {
@@ -83,7 +87,7 @@ class _FuturePageState extends State<FuturePage> {
               // child: const Text('GO!'),
               onPressed: () {
                 // count();
-                returnFutureGroup();
+                // returnFutureGroup();
                 getNumber().then((value) {
                   setState(() {
                     result = value.toString();
